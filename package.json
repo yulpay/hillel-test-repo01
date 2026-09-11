@@ -4,7 +4,8 @@
   "description": "Hillel test repo 01",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,26 @@
   "homepage": "https://github.com/yulpay/hillel-test-repo01#readme",
   "dependencies": {
     "chalk": "^5.6.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.5",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-cypress": "^7.0.2",
+    "eslint-plugin-playwright": "^2.11.0",
+    "eslint-plugin-react": "^7.37.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.5.1",
+    "prettier": "^3.9.6",
+    "typescript": "~6.0.0",
+    "typescript-eslint": "^8.70.0"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,html}": [
+      "prettier --write"
+    ]
   }
 }
