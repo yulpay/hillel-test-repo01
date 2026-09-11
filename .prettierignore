@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build artifacts
+dist/
+build/
+out/
+
+# Playwright artifacts
+playwright-report/
+test-results/
+blob-report/
+
+# Cypress artifacts
+cypress/downloads/
+cypress/screenshots/
+cypress/videos/
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Environment files
+.env
+.env.*
+
+# OS and Editor files
+.DS_Store
+.vscode/
+.idea/
