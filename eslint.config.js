@@ -3,11 +3,33 @@ import tseslint from 'typescript-eslint';
 import cypress from 'eslint-plugin-cypress';
 import playwright from 'eslint-plugin-playwright';
 import eslintConfigPrettier from 'eslint-config-prettier';
+import globals from 'globals';
 
 export default tseslint.config(
   // 1. Base JavaScript & TypeScript Recommended Rules
   js.configs.recommended,
   ...tseslint.configs.recommended,
+
+  // 1b. Node/CommonJS globals for plain JS homework files, plus Jest globals for test files
+  {
+    files: ['**/*.js'],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
+    },
+  },
+  {
+    files: ['**/*.test.js', '**/tests/**/*.js'],
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+      },
+    },
+  },
 
   // 2. Global Ignores (Expanded with industry best practices)
   {
